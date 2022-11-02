@@ -6,7 +6,7 @@ let notes = ['C' , 'D' , 'E' , 'F', 'G' , 'A' , 'B'];
 //Declare object of colors
 let colors = {bg: '#0B3C4B' , start_clr: '#6E3387', endclr: '#285332'}
 //Declare object to fill with spheres
-
+let Spheres = { }
 //default function plays note on keypress
 
 function triggerNote(note, midi = true) {
