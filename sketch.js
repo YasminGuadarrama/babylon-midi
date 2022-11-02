@@ -2,9 +2,9 @@
 let piano_init = false;
 
 //Declare array of notes
-Let notes = ['C' , 'D' , 'E' , 'F', 'G' , 'A' , 'B'];
+let notes = ['C' , 'D' , 'E' , 'F', 'G' , 'A' , 'B'];
 //Declare object of colors
-Let colors = {bg: '#0B3C4B' , start_clr: '#6E3387', endclr: '#285332'}
+let colors = {bg: '#0B3C4B' , start_clr: '#6E3387', endclr: '#285332'}
 //Declare object to fill with spheres
 
 //default function plays note on keypress
@@ -19,7 +19,6 @@ function triggerNote(note, midi = true) {
 
     //displays note name in browser (you can remove this line)
     document.getElementById('txt').innerText = note.name + note.octave;
-
     synth.triggerAttack(note.name + note.octave);
 
 
@@ -94,8 +93,8 @@ function keyReleased() {
 function setup() {
     noLoop();
     //color background white
+  
     scene.clearColor = new BABYLON.Color3.FromHexString(colors.bg);
-
     //initialize camera
     var camera = new BABYLON.ArcRotateCamera("Camera", 3 * Math.PI / 2, Math.PI / 4, 100, BABYLON.Vector3.Zero(), scene);
     camera.attachControl(canvas, true);
