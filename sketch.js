@@ -29,7 +29,7 @@ let(let [i, n] of notes.entries()){
 }
 
 
-if (Spheres[note.name].position.y < 4){
+if (Spheres[notes.name].position.y < 4){
     Spheres[notes.name].position += 0.5;
 }
 
