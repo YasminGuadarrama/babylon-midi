@@ -1,6 +1,12 @@
 //https://editor.p5js.org/howshekilledit/sketches/P00w6cEmL
 let piano_init = false;
 
+//Declare array of notes
+Let notes = ['C' , 'D' , 'E' , 'F', 'G' , 'A' , 'B'];
+//Declare object of colors
+Let colors = {bg: '#0B3C4B' , start_clr: '#6E3387', endclr: '#285332'}
+//Declare object to fill with spheres
+
 //default function plays note on keypress
 
 function triggerNote(note, midi = true) {
@@ -16,6 +22,20 @@ function triggerNote(note, midi = true) {
 
     synth.triggerAttack(note.name + note.octave);
 
+
+let(let [i, n] of notes.entries()){
+    Spheres[n] = createSphere(i-3, 0, -2, 1);
+    Spheres[n].material = hexMat(colors.start_clr);
+}
+
+
+if (Spheres[note.name].position.y < 4){
+    Spheres[notes.name].position += 0.5;
+}
+
+else{
+    Spheres[notes.name].position = -2;
+}
 
 
     //Show what we are receiving
