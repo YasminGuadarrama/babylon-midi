@@ -94,7 +94,7 @@ function keyReleased() {
 function setup() {
     noLoop();
     //color background white
-    scene.clearColor = new BABYLON.Color3.FromHexString('#ffffff');
+    scene.clearColor = new BABYLON.Color3.FromHexString(colors.bg);
 
     //initialize camera
     var camera = new BABYLON.ArcRotateCamera("Camera", 3 * Math.PI / 2, Math.PI / 4, 100, BABYLON.Vector3.Zero(), scene);
