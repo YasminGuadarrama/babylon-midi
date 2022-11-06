@@ -22,20 +22,6 @@ function triggerNote(note, midi = true) {
     synth.triggerAttack(note.name + note.octave);
 
 
-let(let [i, n] of notes.entries()){
-    Spheres[n] = createSphere(i-3, 0, -2, 1);
-    Spheres[n].material = hexMat(colors.start_clr);
-}
-
-
-if (Spheres[notes.name].position.y < 4){
-    Spheres[notes.name].position += 0.5;
-}
-
-else{
-    Spheres[notes.name].position = -2;
-}
-
 
     //Show what we are receiving
     console.log(
@@ -96,13 +82,26 @@ function setup() {
   
     scene.clearColor = new BABYLON.Color3.FromHexString(colors.bg);
     //initialize camera
-    var camera = new BABYLON.ArcRotateCamera("Camera", 3 * Math.PI / 2, Math.PI / 4, 100, BABYLON.Vector3.Zero(), scene);
+    var camera = new BABYLON.ArcRotateCamera("Camera", 3 * Math.PI / 2, Math.PI / 4, 20, BABYLON.Vector3.Zero(), scene);
     camera.attachControl(canvas, true);
 
     //initialize light
     var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 1, 0), scene);
     light.intensity = 1;
 
+    for(let [i, n] of notes.entries()){
+        Spheres[n] = createSphere(i-3, 0, -2, 1);
+        Spheres[n].material = hexMat(colors.start_clr);
+    }
+
+
+    if (Spheres[notes.name].position.y < 4){
+        Spheres[notes.name].position.x += 0.5;
+    }
+
+    else{
+        Spheres[notes.name].position.y = -2;
+    }
 
     synth = new Tone.PolySynth(Tone.MonoSynth, {
         volume: -8,
